@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Image Result</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        h1 {
+            margin-bottom: 30px;
+        }
+        img {
+            max-width: 100%; /* Responsive image */
+            height: auto;    /* Maintain aspect ratio */
+            border: 1px solid #ccc; /* Optional border */
+            border-radius: 5px; /* Optional rounded corners */
+        }
+        .image-container {
+            text-align: center; /* Center the content */
+            margin-top: 20px; /* Add some space above the image */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">Generated Image</h1>
+
+        <div class="image-container">
+            <h2>Generated Image for: "<span th:text="${prompt}"></span>"</h2>
+            <img th:src="'data:image/png;base64,' + ${generatedImage}" alt="Generated Image"/>
+        </div>
+
+        <div class="text-center" style="margin-top: 20px;">
+            <a href="/" class="btn btn-primary">Generate another image</a>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS (Optional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
